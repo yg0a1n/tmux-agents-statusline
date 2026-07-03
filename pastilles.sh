@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Pastilles d'état des agents IA — status-line tmux.
-# MIT — Yannick Goalen (https://github.com/yg0a1n/tmux-agents-statusline)
+# MIT — Yannick Goalen EI (https://github.com/yg0a1n/tmux-agents-statusline)
 #
 # Deux dimensions :
 #   - ACTIVITÉ (posée par un watcher : le transcript de l'agent bouge) → 🟢 il bosse MAINTENANT

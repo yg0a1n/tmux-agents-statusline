@@ -2,6 +2,8 @@
 
 **La status bar qui te dit qui fait quoi** — superviser plusieurs agents IA (Claude Code, aider, …) d'un coup d'œil, sans changer de fenêtre :
 
+![La status bar en production : 6 agents supervisés en un coup d'œil](assets/statusbar.png)
+
 ```
 cc-agent-os  🟢agent-os 🟢builder 🟢designer 🟢growth 🟡admin ⚪saas
 ```
