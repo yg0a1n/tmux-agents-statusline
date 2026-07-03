@@ -55,6 +55,8 @@ Les signaux `active` et `prompt` expirent automatiquement (30 s par défaut, `PA
 
 ## Ça vient d'où ?
 
+![Mon équipe, c'est 6 agents IA — le visuel qui me dit qui fait quoi](assets/statusline-6-agents.png)
+
 Extrait de mon setup de production : une équipe d'agents Claude Code qui tourne en continu sur mon Mac. Pour en discuter : [Yannick Goalen sur LinkedIn](https://www.linkedin.com/in/y-goalen/).
 
 Licence MIT — si tu réutilises, un lien vers le repo fait toujours plaisir.
