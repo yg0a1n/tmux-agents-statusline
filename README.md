@@ -21,6 +21,10 @@ Le principe : **tu ne reviens que sur le rouge.** Tout le reste vit sans toi.
 
 ## Installation (5 min)
 
+Il faut **tmux** et **bash**, sur macOS ou Linux — le script lit les dates de fichier avec
+`stat -f` comme avec `stat -c`, donc les deux mondes passent. Testé sur tmux 3.7b et bash 3.2
+(macOS 26).
+
 ```bash
 mkdir -p ~/.config/tmux
 cp pastilles.sh statusline.conf ~/.config/tmux/
@@ -48,6 +52,23 @@ pastilles.sh rest saas blocked
 # Un menu de permission est affiché chez "builder" → rouge prioritaire
 pastilles.sh prompt builder 1
 ```
+
+### Les quatre commandes
+
+| Commande | Effet |
+|---|---|
+| `pastilles.sh rest <agent> <waiting\|blocked\|idle>` | Pose l'état de repos. `idle` (⚪) est la valeur par défaut si rien n'est posé |
+| `pastilles.sh active <agent> <0\|1>` | Signale que l'agent travaille (🟢) |
+| `pastilles.sh prompt <agent> <0\|1>` | Signale un menu de permission (🔴, prioritaire sur tout le reste) |
+| `pastilles.sh render` | Écrit la ligne de pastilles — c'est ce que `statusline.conf` appelle toutes les 5 s |
+
+### Réglages
+
+| Variable | Défaut | Rôle |
+|---|---|---|
+| `PASTILLE_AGENTS` | `agent-1 agent-2 agent-3` | Les agents affichés, dans l'ordre |
+| `PASTILLE_DIR` | `/tmp/pastilles` | Où sont écrits les fichiers d'état |
+| `PASTILLE_STALE` | `30` | Fraîcheur maximale, en secondes, d'un signal `active` ou `prompt` |
 
 Les signaux `active` et `prompt` expirent automatiquement (30 s par défaut, `PASTILLE_STALE`) : si le watcher meurt, la pastille se dégrade proprement au lieu de mentir.
 
